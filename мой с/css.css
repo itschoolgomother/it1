@@ -1,0 +1,16 @@
+.first{
+	color: green;
+}
+.second{
+	color: black;
+}
+.third{
+	color: red;
+}
+.fourth{
+	color: black;
+}
+li{
+	text-decoration: underline;
+	
+}

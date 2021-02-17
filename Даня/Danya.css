@@ -1,0 +1,70 @@
+.box{
+ width: 50px;
+ width: 50px;
+ border: 3px;
+ background color: blue;
+ margin-left: 100px;
+}
+
+.box1{
+	width: 200px;
+ height:  350px;
+ border: 3px solid black;
+ border-radius: 50%;
+ background-color: green;
+
+}
+a:hover{
+	text-decoration: underline;
+	color: blue
+} 
+ a{
+
+ 	color: red;
+ 	font-size: 20px;
+ 	text-decoration: none;
+ 	margin-top: 10px;
+ 	display: inline-block;
+ 	
+ }
+ .list{
+ list-style-type: circle;
+ text-decoration: underline;
+ 
+ }
+ .list1{
+ 	font-size: 20px;
+ 	color: rgba(250,140,0,0.5);
+ }
+  .list1:hover{
+text-decoration: underline;
+
+
+
+ }
+img{
+	width: 300px;
+	height: 300px;
+}
+.img2{
+	margin-left: 500px
+}
+audio{
+	background-color: green;
+	border: 2px dashed blue;
+
+}
+body{
+	background-color: lightgrey
+}
+/*li{
+	list-style-type: none;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border:2px solid	black;
+	display: inline-block;
+}*/
+li + li + li + li{background-color: green;
+
+}

@@ -1,0 +1,29 @@
+ul li{
+	color: green;
+}
+.main-menu{
+	list-style-type: none;
+	/*square disc none*/
+}
+
+.main-menu a{
+	background-color: yellow;
+	color: blue;
+	display: block;
+	width: 150px;
+	font-size: 30PX;
+	border: 1px solid black;
+	margin-bottom: -1px;
+	padding: 15px;
+	text-decoration: none;
+	font-family: "Impact";
+	transition: all .8s linear;
+
+}
+.main-menu a:hover{
+	text-decoration: underline;
+	transform: translateX(20px);
+	background-color: orange;
+	padding-left: 50px;
+
+}

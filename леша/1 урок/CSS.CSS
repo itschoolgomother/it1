@@ -1,0 +1,11 @@
+body{
+	background-image: linear-gradient(to right bottom, red, orange, yellow, green, royalblue, blue, violet);
+	height: 100vh;
+	background-repeat: no-repeat;
+
+}
+#box{
+	width: 100px;
+	height: 100px;
+	background-color: white;
+}
