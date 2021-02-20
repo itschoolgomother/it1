@@ -1,15 +1,29 @@
-#hero{
-	height: 200px;
-	width:250px;
-	background-color: blue;
+body{
+	background-image: url(11.jpg);
+
+}
+#enter{
+	height:100px;
 	position: absolute;
+	left: 1220px;
+}
+#exit{
+	height:100px;
+	position: absolute;
+	top: 800px
+}
+#hero{
+ 	height: 80px;
+	position: absolute;
+
 }
 #coin{
 	height: 65px;
 	width: 65px;
 	background-color: yellow;
-	border-radius: 50%;
+	border-radius:50% ;
 	position: absolute;
+	
 }
 #score{
 	height: 55px;
