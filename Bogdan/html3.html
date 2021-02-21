@@ -26,6 +26,14 @@
 	let playerheight = 100;
 	let playerwidth = 100;
 	let player1X = 0;
+	let player2 = new Image();
+	let player2Y = 50;
+	let player2width = 125;
+	let player2up = false;
+	let player2Down = false;
+	let player2X = cnv.width-100;
+	let player2height = 150;
+	player2.src = "img.png"
 	player1.src = "image.png";
 	document.addEventListener("keydown", nazhato, false)
 	document.addEventListener("keyup", otzhali, false)
@@ -36,6 +44,12 @@
 		if(e.keyCode == 87){
 			playerUp = true;
 		}
+		if(e.keyCode == 38){
+			player2up = true;
+		}
+		if(e.keyCode == 40){
+			player2Down = true;
+		}
 	}
 	function otzhali(e){
 		if(e.keyCode == 83){
@@ -44,7 +58,13 @@
 		if(e.keyCode == 87){
 			playerUp = false;
 		}
-
+			
+		if(e.keyCode == 38){
+			player2up = false;
+		}
+		if(e.keyCode == 40){
+			player2Down = false;
+		}
 	}
 	function boll (){
 	ctx.beginPath();
@@ -57,6 +77,7 @@
 
 		ctx.clearRect(0, 0, cnv.width, cnv.height)
 		ctx.drawImage(player1, player1X, y, playerwidth, playerheight);
+		ctx.drawImage(player2,player2X,player2Y,player2width,player2height);
 		if(playerDown){
 			y+=10;
         if(y + playerheight>=cnv.height){
@@ -69,6 +90,18 @@
 		if(y<=0){
 			y+=10;
 		}
+		}
+		if(player2up){
+			player2Y-=10;
+			if(player2Y<=0){
+			player2Y+=10;
+		}
+		}
+		if(player2Down){
+			player2Y+=10;
+			 if(player2Y + player2height>=cnv.height){
+        	player2Y-=10
+        }
 		}
 		boll();
 		bollX= bollX + dx;
@@ -85,7 +118,7 @@
 		}
 		
 	} 
-	setInterval(game, 30);
+	setInterval(game, 5);
 </script>
 </body>
 </html>
