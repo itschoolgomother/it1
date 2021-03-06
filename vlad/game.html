@@ -18,8 +18,8 @@
 		coin.style.left = Math.random()*window.innerHeight -50 + "px";
 		let stop = 0;
 		let x = 15;
-		let eX = 1150;
-		let eY = 50;
+		let eX = 100;
+		let eY = 500;
 		let eDx = 7;
 		let eDy = 7;
 		let y = 15;
@@ -70,16 +70,16 @@
 			}
 		}
 			function game() {
-			// pacman.style.left = eX + "px";
-			// pacman.style.top = eY + "px";
-			// eX += eDx;
-			// eY += eDy;
-			// if (eY + 100 >= window.innerHeight || eY <= 0) {
-			// 	eDy = -eDy;
-			// }
-			// if (eX + 100 >= window.innerWidth || eX <= 0) {
-			// 	eDx = -eDx;
-			// }
+				pacman.style.left = eX + "px";
+			pacman.style.top = eY + "px";
+			eX += eDx;
+			eY += eDy;
+			if (eY + 100 >= window.innerHeight || eY <= 0) {
+				eDy = -eDy;
+			}
+			if (eX + 100 >= window.innerWidth || eX <= 0) {
+				eDx = -eDx;
+			}
 
 
 		    if (rightpressed && stop<1) {
@@ -137,7 +137,16 @@
 		switch(score){
 			case 10:
 			coin.style.backgroundColor = colors[0];
-			break;
+		 if(eDx<0){
+			eDx = 10
+		}else{
+			eDx = -10
+		}
+        if (eDy>0) {
+        	eDy=10;
+        }
+			break;		
+        
 		}
 		requestAnimationFrame(game)
 			}

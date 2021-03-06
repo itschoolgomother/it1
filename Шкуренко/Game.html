@@ -150,6 +150,19 @@
 		let box = hero.getBoundingClientRect()
 		let box1 = coin.getBoundingClientRect()
 		let box2 = pic.getBoundingClientRect()
+		let box3 = enter.getBoundingClientRect()
+		let box4 = exit.getBoundingClientRect()
+
+		if (intersection(box,box3)) {
+			x = 0;
+			y = 800;
+			hero.style.left = x+"px"
+			hero.style.top = y+"px"
+		}
+		if (intersection(box,box4)) {
+			x = 1220;
+			y = 0;
+		}
 
 		if (intersection(box,box2)) {
 			res++;
