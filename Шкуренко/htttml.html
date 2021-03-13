@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+	</style>
+</head>
+<body >
+	<canvas id="canvas" width="288" height="512"></canvas>
+	<script type="text/javascript">
+        let cnv = document.getElementById("canvas");	
+        let ctx = cnv.getContext("2d");
+
+        let bg = new Image();
+        let bird = new Image();
+        let fg = new Image();
+        let pipeUp = new Image();
+        let pipeDown = new Image();
+
+        let bx = 15;
+        let by = 15;
+        bg.src = "Desktop/flappy_bird_bg.png";
+        bird.src = "Desktop/flappy_bird_bird.png";
+        fg.src = "Desktop/flappy_bird_fg.png";
+        pipeUp = "Desktop/flappy_bird_pipeUp.png";
+        pipeDown = "Desktop/flappy_bird_pipeBottom.png";
+
+        document.addEventListener("keydown", move);
+        
+
+        function move() {
+        	
+        }
+
+
+
+        function game() {
+        	ctx.drawImage(bg,0,0);
+        	ctx.drawImage(bird,bx,by);
+        	by += 3.5;
+
+        	requestAnimationFrame(game);
+        }
+        requestAnimationFrame(game);
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
