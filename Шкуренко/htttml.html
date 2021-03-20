@@ -22,20 +22,27 @@
         let fg = new Image();
         let pipeUp = new Image();
         let pipeDown = new Image();
+        let step = 80;
+        let pipe = [];
+        pipe[0] = {
+         x: cnv.width,
+         y: 0
+        };
+        let score = 0;
 
         let bx = 15;
         let by = 15;
         bg.src = "Desktop/flappy_bird_bg.png";
         bird.src = "Desktop/flappy_bird_bird.png";
         fg.src = "Desktop/flappy_bird_fg.png";
-        pipeUp = "Desktop/flappy_bird_pipeUp.png";
-        pipeDown = "Desktop/flappy_bird_pipeBottom.png";
+        pipeUp.src = "Desktop/flappy_bird_pipeUp.png";
+        pipeDown.src = "Desktop/flappy_bird_pipeBottom.png";
 
         document.addEventListener("keydown", move);
         
 
         function move() {
-        	
+                by -= 40;	
         }
 
 
@@ -44,8 +51,26 @@
         	ctx.drawImage(bg,0,0);
         	ctx.drawImage(bird,bx,by);
         	by += 3.5;
-
-        	requestAnimationFrame(game);
+                for(let i=0; i < pipe.length; i++){
+                        ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y)
+                        ctx.drawImage(pipeDown, pipe[i].x, pipe[i].y+pipeUp.height+step)
+                        pipe[i].x--;
+                        if(pipe[i].x == 100){
+                                pipe.push({
+                                x: cnv.width,
+                                y: Math.random()*pipeUp.height-pipeUp.height
+                                })
+                        }
+               if (pipe[i].x == 10) {
+                score++
+               }
+                }ctx.drawImage(fg, 0,cnv.height-fg.height)
+                ctx.font=("35px");
+                ctx.fillStyle = "red";
+                ctx.fillText("score: "+score,130,450)
+           
+               
+                requestAnimationFrame(game);
         }
         requestAnimationFrame(game);
 
