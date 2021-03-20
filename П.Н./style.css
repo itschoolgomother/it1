@@ -1,0 +1,18 @@
+body{
+	background-color: blue;
+	background-image: linear-gradient(to left,red,orange,gold,green,lightblue,blue,violet)
+}
+a{
+	color: white;
+	font-size: 50px;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: overline;
+	transition: 1s linear;
+	opacity: 0.2;
+}
+a:hover{
+	color: red;	
+	opacity: 1;
+	font-size:100px																	 
+}
