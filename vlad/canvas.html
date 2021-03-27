@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+      canvas{
+      	border: 1px solid red
+      }
+	</style>
+</head>
+<body>
+<canvas id="mycanvas" width="500" height="500"></canvas>
+<script type="text/javascript">
+	let cvs = document.getElementById('mycanvas')
+	let ctx = cvs.getContext('2d')
+let x =225;
+let y = 225
+let dx =2;
+let dy =2;
+	function drow(){
+		ctx.clearRect(0,0,500,500)
+
+			ctx.beginPath();
+ctx.fillStyle = '#6600bb';
+ctx.rect(x,y,50,50);
+ctx.fill();
+	ctx.closePath();
+	x+=dx
+if (x +50 >=cvs.width || x <= 0){
+	dx= -dx;
+	}
+		
+}
+setInterval(drow, 100)
+</script>
+</body>
+</html>
