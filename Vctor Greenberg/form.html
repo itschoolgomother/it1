@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="form.css">
+</head>
+<body>
+	<div>
+		<form method="post">
+			<label for="log">Login</label>
+			<br>
+			<input type="text" name="for Login" id="log">
+			<br>
+			<label for="pass">Password</label>
+			<br>
+			<input type="password" name="" id="pass" required>
+			<br>
+			<input type="checkbox" name="" id="check" checked>
+			<label for="check">Remember me?</label>
+			<br>
+			<input type="submit" name="" value="abracadabra">
+			<br>
+			<label for="col">Pick your color</label>
+			<input type="color" name="" value="#ECFF00" id="col">
+		</form>
+	</div>
+	<div>
+		<form>
+			<select multiple>
+				<option>
+					Computers
+				</option>
+				<option>
+					Laptops
+				</option>
+				<option>
+					Smartphones
+				</option>
+			</select>
+		</form>
+	</div>
+	<label>1
+		<input type="radio" name="">
+	</label>
+	<label>2
+		<input type="radio" name="">
+	</label>
+	<label>3
+		<input type="radio" name="">
+	</label>
+	<script type="text/javascript">
+		let nums= /[0-9]/g
+		let strs= /[a-z]/g
+		let strsup=/[A-Z]/g
+		function pass (password){
+			if (password.length>=8) {
+				return true
+			}else{return false}
+		}
+	</script>
+</body>
+</html>
