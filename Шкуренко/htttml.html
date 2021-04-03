@@ -22,7 +22,7 @@
         let fg = new Image();
         let pipeUp = new Image();
         let pipeDown = new Image();
-        let step = 80;
+        let step = 110;
         let pipe = [];
         pipe[0] = {
          x: cnv.width,
@@ -42,7 +42,7 @@
         
 
         function move() {
-                by -= 40;	
+                by -= 50;	
         }
 
 
@@ -64,9 +64,19 @@
                if (pipe[i].x == 10) {
                 score++
                }
+               if (bx + bird.width >= pipe[i].x
+                && bx <= pipe[i].x + pipeUp.width
+                && (by <= pipe[i].y + pipeUp.height
+                || by + bird.height >= pipe[i].y + pipeUp.height + step)
+                || by + bird.height >= cnv.height - fg.height) {
+                document.location.reload()
+               }
                 }ctx.drawImage(fg, 0,cnv.height-fg.height)
-                ctx.font=("35px");
-                ctx.fillStyle = "red";
+                ctx.font="45px Chilanka ";
+                ctx.strokeStyle = "red";
+                ctx.lineWidth = 5;
+                ctx.fillStyle = "yellow";
+                ctx.strokeText("score: "+score,130,450)
                 ctx.fillText("score: "+score,130,450)
            
                

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#c{
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+<canvas width="500" height="500" id="c"></canvas>
+<button onclick="addRandomCircle()">add</button>
+<script type="text/javascript">
+	let cnv = document.getElementById("c")
+	let ctx = cnv.getContext("2d");
+	function circle(x,y, radius, color){
+	this.x= x;
+	this.y= y;
+	this.radius = radius;
+	this.color= color;
+}
+let circles=[];
+function addRandomCircle() {
+	
+	let x = Math.random()* cnv.width;
+	let y= Math.random()* cnv.height;
+	let radius = Math.random *20 + 10
+	let colors = ['green', 'blue', 'red', 'black', 'orange']
+	let color = colors[Math.floor(Math.random()*5)]
+	let cirk = new circle(x,y, radius, color);
+	circles.push(cirk);
+	draw();
+	}
+
+	function draw (){
+		for(let i =0; i < circles.length; i++){
+			let cirk = circles[i];
+			ctx.beginPath();
+			ctx.fillStyle = cirk.color
+			ctx.arc(cirk.x,cirk.radius,0, Math.PI*2, true)
+			ctx.fill()
+		}
+	}
+</script>
+</body>
+</body>
+</html>

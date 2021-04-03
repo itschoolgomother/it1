@@ -1,0 +1,56 @@
+.container{
+	width: 70%;
+	height: 100vh;
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: space-between;
+
+}
+body{
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.box{
+	width: 20%;
+	height: 20%;
+	border: 1px solid black;
+	margin: 5px;
+	filter: sepia(85%);
+	transition: 1s linear;
+}
+.box1{
+	background-image: url(img1.jpeg);
+}
+.box2{
+	background-image: url(img2.jpeg);
+}
+.box3{
+	background-image: url(img3.jpeg);
+}
+.box4{
+	background-image: url(img4.jpeg);
+}
+.box5{
+	background-image: url(img5.jpeg);
+}
+.box:hover{
+	filter: sepia(0);
+	transform: translateY(100%);
+}
+.box31,
+.box41,
+.box51{
+	align-self: flex-end;
+	order: 1;	
+}
+.btn{
+	height: 100px;
+	width: 200px;
+}

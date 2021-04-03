@@ -1,0 +1,47 @@
+div{
+	/*ширина*/
+	width: 100px;
+	height: 100px;
+	background-color: grey;
+	margin: 10px auto;
+}
+.box:hover{
+	background-color: blue;
+	transform: rotate(360deg);
+}
+.box1{
+	transition: 1s 0.2s linear;
+}
+.box1:hover{
+	background-color: red;
+	transform: rotate(360deg);
+}
+.box2{
+transition:1s linear;
+}
+.box2:hover{
+	background-color: orange;
+	border-radius: 50%;
+}	
+.box3{
+transition:1s linear;
+}
+.box3:hover{
+	box-shadow: 10px 10px 0px 0px green,
+	20px 20px 0px 0px red,
+	30px 30px 0px 0px lightblue;
+}
+.box4{
+transition:1s linear;
+}
+.box4:hover{
+	transform: scale(2);
+	background-color: blue;
+}
+.box5{
+transition:1s linear;
+}
+.box5:hover{
+transform: skew(15deg,15deg);
+background-color: violet
+}
