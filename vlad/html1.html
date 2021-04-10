@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<canvas id="c" width="500" height="500"></canvas>
+<button onclick="addrandomImage()" id="sc">add</button>
+<script type="text/javascript">
+	let cnv = document.getElementById('c')
+	let ctx = cnv.getContext('2d')
+	let score=5000000
+	;
+	let img1 = new Image();
+	let img2 = new Image();
+	let img3 = new Image();
+	img1.src = '/home/it1/Документы/vlad/2dgorillaz-2d-gorillaz-saturnzbarz-stuartpot-2d-gorillaz-11563205756kfoz4b9qsq.png'
+	img2.src = '/home/it1/Документы/vlad/2d-hero.png'
+	img3.src = '/home/it1/Документы/vlad/185-1859464_2d-gorillaz-2-d.jpeg'
+	function images(imag, x, y, w, h){
+		this.imag = imag;
+		this.x =x;
+		this.y =y;
+		this.w =w;
+		this.h =h;
+		}
+		let imgArray = []
+		function addrandomImage(){
+			let randomImage= [img1, img2, img3]
+			let imag = randomImage[Math.floor(Math.random()*3)]
+			let x = Math.random()*cnv.width;
+			let y = Math.random()*cnv.height
+			let w = Math.random()*90+10;
+			let h = Math.random()*90+10;
+			let image = new images(imag, x,y,w,h)
+			imgArray.push(image);
+			draw();
+		}
+			function draw (){
+			for(let i=0; i<imgArray.length;i++){
+				score++;
+				sc.innerHTML = 'add '+score
+				let image = imgArray[i];
+				ctx. beginPath();
+				ctx.drawImage (image.imag,image.x,image.y, image.w, image.h)
+			}
+			}
+</script>
+</body>
+</html>

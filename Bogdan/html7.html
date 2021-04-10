@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<canvas width="1000" height="1000" id="Boghdan"></canvas>
+<script type="text/javascript">
+let cnv = document.getElementById("Boghdan")
+let ctx = cnv.getContext("2d");
+let tank = new Image();
+let tw = 100;
+let th = 100;
+let tx = Math.random()*(cnv.width-tw)
+let ty = Math.random()*(cnv.height-tw)
+tank.src= "/home/it1/Документы/Bogdan/PngItem_6855005.png"
+let playerDown = false;
+	let playerUp = false;
+	let playerleft = false;
+	let playerRight = false;
+	let dir;
+	document.addEventListener("keydown", nazhato, false)
+	document.addEventListener("keyup", otzhali, false)
+function nazhato(e){
+		if(e.keyCode == 83){
+			playerDown = true;
+		}
+		if(e.keyCode == 87){
+			playerUp = true;
+		}
+		if(e.keyCode == 68){
+			playerRight = true;
+		}
+		if(e.keyCode == 65){
+			playerleft = true;
+		}
+	}
+function otzhali(e){
+		if(e.keyCode == 83){
+			playerDown = false;
+		}
+		if(e.keyCode == 87){
+			playerUp = false;
+		}
+			
+		if(e.keyCode == 68){
+			playerRight = false;
+		}
+		if(e.keyCode == 65){
+			playerleft = false;
+		}
+	}
+function game() {
+ctx.clearRect(0,0,cnv.width,cnv.height)
+ctx.drawImage(tank,tx,ty,tw,th);
+if (playerleft) {
+	tx-=5;
+	dir="left"
+}
+if(playerRight) {
+	tx+=5;
+	dir="right"
+}
+if(playerUp) {
+	ty-=5;
+	dir="Up"
+}
+if(playerDown) {
+	ty+=5;
+	dir="down"
+}
+}
+setInterval(game,1)
+</script>
+</body>
+</html>
