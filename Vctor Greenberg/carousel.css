@@ -59,3 +59,17 @@ body{
 .carousel .carousel-btns button:hover{
 	opacity: 1;
 }
+.carousel .carousel-dots{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin: 0 10px;	
+}
+.carousel .carousel-dots .dot{
+	width: 15px;
+	height: 15px;
+	border: 1px solid black;
+	border-radius: 50%;
+	background-color: lightgrey;
+
+}
