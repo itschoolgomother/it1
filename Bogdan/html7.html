@@ -1,29 +1,37 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 </head>
 <body>
-<canvas width="1000" height="1000" id="Boghdan"></canvas>
+<canvas width="1000" height="1000" id="Boghdan" ></canvas>
 <script type="text/javascript">
 let cnv = document.getElementById("Boghdan")
 let ctx = cnv.getContext("2d");
 let tank = new Image();
+let tank2 = new Image()
 let tw = 100;
 let th = 100;
 let tx = Math.random()*(cnv.width-tw)
 let ty = Math.random()*(cnv.height-tw)
+let tw2 = 200;
+let th2 = 200;
+let tx2 = Math.random()*(cnv.width-tw)
 tank.src= "/home/it1/Документы/Bogdan/PngItem_6855005.png"
+tank2.src = "/home/it1/Документы/Bogdan/clipart775699.png"
 let playerDown = false;
 	let playerUp = false;
 	let playerleft = false;
 	let playerRight = false;
 	let dir;
+	let shot = false;
 	document.addEventListener("keydown", nazhato, false)
 	document.addEventListener("keyup", otzhali, false)
 function nazhato(e){
 		if(e.keyCode == 83){
 			playerDown = true;
+		}
+		if(e.keyCode == 69){
+			shot= true;
 		}
 		if(e.keyCode == 87){
 			playerUp = true;
@@ -39,6 +47,9 @@ function otzhali(e){
 		if(e.keyCode == 83){
 			playerDown = false;
 		}
+		if(e.keyCode == 69){
+			shot = false;
+		}
 		if(e.keyCode == 87){
 			playerUp = false;
 		}
@@ -50,27 +61,92 @@ function otzhali(e){
 			playerleft = false;
 		}
 	}
+	function bullets(x,y,w,h,direction){
+	    this.x = x;
+		this.y = y;
+		this.w = w;
+		this.h = h;
+		this.direction = direction;	
+	} 
+    let bulletsArr = [];
+    function creatBullets(){
+    	let x = tx;
+        let y = ty;
+        let w = 20;
+        let h = 20;
+        let direction = dir;
+        let bullet = new bullets(x,y,w,h,direction);
+        bulletsArr.push(bullet);
+        drawBullets();
+
+    }
+    document.addEventListener('click', drawBullets)
+    function drawBullets(){
+    	for(let i = 0;i < bulletsArr.length;i++){
+    		ctx.beginPath();
+    		let bullet = bulletsArr[i];
+    		ctx.fillStyle = 'red'
+    		ctx.rect(bullet.x, bullet.y, bullet.w, bullet.h);
+    		ctx.fill();
+    		if(bullet.direction == "right"){
+    			bullet.x+=5;	
+    			if (bullet.x >= cnv.width){	
+    				// delete bulletsArr[i]
+    		}
+    		}
+    		
+    		if(bullet.direction == "left"){
+    			bullet.x-=5
+    			if(bullet<=0){
+
+    		}
+    		}
+    		
+    		if(bullet.direction == "Up"){
+    			bullet.y-=5
+    			if(bullet.y<=0){
+
+    		}
+    		}
+
+    		if(bullet.direction == "down"){
+    			bullet.y+=5
+    			if(bullet.y>=cnv.height){
+
+    	}
+    }
+}
+}
+    // setInterval(drawBullets,10);
 function game() {
-ctx.clearRect(0,0,cnv.width,cnv.height)
+
+if(shot){
+	creatBullets()
+}
+ctx.clearRect(0,0,cnv.width,cnv.height);
 ctx.drawImage(tank,tx,ty,tw,th);
+ctx.clearRect(1,1,cnv.width,cnv.height);
+ctx.drawImage(tank2,tx,ty,tw,th);
 if (playerleft) {
-	tx-=5;
+	tx-=30;
 	dir="left"
 }
 if(playerRight) {
-	tx+=5;
+	tx+=30;
 	dir="right"
 }
 if(playerUp) {
-	ty-=5;
+	ty-=30;
 	dir="Up"
 }
 if(playerDown) {
-	ty+=5;
+	ty+=30;
 	dir="down"
+	// ctx.rotate(90*Math.PI/180)
 }
+drawBullets()
 }
-setInterval(game,1)
+setInterval(game,100)
 </script>
 </body>
 </html>
