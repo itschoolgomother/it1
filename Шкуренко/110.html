@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="110.css">
+</head>
+<body>
+
+	<div id="box"></div>
+	<button id="a">ADD</button>
+	<script type="text/javascript">
+		a.addEventListener('click', addElem);
+
+
+		function addElem() {
+			let colors = ['red','black','green','indigo','cyan']
+			let color = colors[Math.floor(Math.random()*5)]
+			let wh = Math.random()*100+50;
+			let colorsb = ['green','indigo','red','cyan'];
+			let colorb = colorsb[Math.floor(Math.random()*5];
+			
+				box.innerHTML += `<div class=\"item\" style=\"top:${Math.random()*window.innerHeight}px; left:${Math.random()*window.innerWidth}px; background-color:${color}; height:${wh}px;width: ${wh}px; border: 100px solid ${colorb};\"></div>`;
+				document.body.style.backgroundColor=color;
+			}	
+	</script>
+
+</body>
+</html>

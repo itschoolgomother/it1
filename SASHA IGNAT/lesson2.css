@@ -1,0 +1,12 @@
+ul{
+	list-style-type: circle;
+	color: green;
+}
+.first{
+	color: green;
+	text-decoration: underline;
+}
+.second{
+	color: yellow;
+	text-decoration: line-through;
+}
