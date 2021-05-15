@@ -1,0 +1,30 @@
+body{
+	height: 100vh;
+}
+.page{
+	 width: 1200px;
+	 display: grid;
+	 grid-template-rows: 60px 1fr;
+	 grid-template-columns: 1fr 10fr;
+	 grid-template-areas: "h h"
+	 "n m";
+	 margin: 0 auto;
+	 grid-gap: 5px;
+}
+header{
+	grid-area: h;
+	background-color: #3ba8a6;
+#3ba8a6
+}
+header .logo img{
+	height: 60px;
+	width: auto;
+}
+nav{
+	grid-area: n; 
+	background-color: #3b56a8;	
+}
+main{
+	grid-area: m;
+	background-color: #3ba85f;
+}#3ba85f
