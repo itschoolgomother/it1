@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.box{
+			position: absolute;
+			height: 100px;
+			width: 100px;
+			background-color: red;
+		}
+		button{
+			position: absolute;
+			bottom: 0;
+}
+			</style>
+		
+</head>
+<body>
+	<div id="b"></div>
+	<button id="btn">add</button>
+
+	<script type="text/javascript">
+		btn.onclick=function(){
+			b.innerHTML += `<div class=\"box\" style=\"top: ${Math.random()*1000}px; left : ${Math.random()*1000}px;\"></div>`
+		}
+
+	</script>
+</body>
+</html>
