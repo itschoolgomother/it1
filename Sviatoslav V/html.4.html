@@ -22,14 +22,14 @@
 		</div>
 		<div id="dots">
 			<div class="dot"></div>
-			<div class="dot"></div>
+			<div class=  "dot"></div>
 			<div class="dot"></div>
 		</div>
 	</div>
 	<script type="text/javascript">
 		let slides = document.getElementsByClassName('carousel-item');
 		let nomer = 0;
-
+		let dotArr = document.getElementsByClassName("dot")
 		back.addEventListener("click",backSlide);
 		next.addEventListener("click",nextSlide);
 
@@ -43,28 +43,28 @@
 		}
 
 		function nextSlide() {
-			
+			dotArr[nomer].style.backgroundColor = "white";
 			if (nomer == slides.length - 1) {
 				nomer = 0;
 			}else{
 				nomer++;
 			}
+			dotArr[nomer].style.backgroundColor = "grey";
 			slides[nomer].style.animation = "next 0.8s linear";
 			slidePos()
 		}
 
 		function backSlide() {
+			dotArr[nomer].style.backgroundColor = "white";
 			if (nomer == 0) {
 				nomer = slides.length-1;
 			}else{
 				nomer--;
 			}
+			dotArr[nomer].style.backgroundColor = "grey"
 			slides[nomer].style.animation = "back 0.8s linear";
 			slidePos()
 		}
-
-		
-
 	</script>
 </body>
 </html>
