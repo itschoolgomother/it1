@@ -1,0 +1,27 @@
+.container{
+	height: 500px;
+	width: 500px;
+	border:1px solid black;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+
+}
+.container .box{
+	height: 150px;
+	width: 150px;
+	border:1px solid black;
+/*	filter: grayscale(100%);*/
+	transition: 0.3s linear;
+}
+.container .box:hover{
+	filter: grayscale(0);
+/*	transform: skew(1rad,1rad) scale(0.01);*/
+}
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh
+}

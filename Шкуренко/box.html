@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="box.css">
+</head>
+<body>
+	<div class="container">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box" id="pickcolor"></div>
+	</div>
+	<script type="text/javascript">
+		let boxes = document.getElementsByClassName("box")
+		
+		pickcolor.onclick = function(){
+			let colors = ["red","green","blue","indigo"];
+			let arr = [0,1,2,3];
+			let arr1 = [4,5,6,7];
+			let count = 4;
+			for(let i =  0;i < colors.length; i++){
+				
+				let r = Math.floor(Math.random()* count);
+				let r1 = Math.floor(Math.random()* count);
+				
+				boxes[arr[r]].style.background = colors[i]; 
+				boxes[arr1[r1]].style.background = colors[i];
+				console.log(boxes[0])
+				arr.splice(r,1);
+				arr1.splice(r1,1);
+				count--;
+			}
+		}
+	</script>
+</body>
+</html>
