@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="game.css">
+</head>
+<body>
+	<img src="imghero.jpeg" id="hero">
+	<img src="coin.jpeg" id="coin">
+	<div id="scoreboard">
+		score: 0
+	</div>
+	<script type="text/javascript">
+		let keyRight = false;
+		let keyLeft = false;
+		let x = 0;
+		let y = 0;
+		let keyUp = false;
+		let keyDown = false;
+		let score = 0;
+		console.log(scoreboard.innerHTML)
+		hero.style.left = '0px'
+		hero.style.top = '0px'
+		coin.style.left = '500px'
+		coin.style.top = '500px'
+		document.addEventListener("keydown", nazhali)
+		document.addEventListener("keyup", otpustili)
+		let intersection = function(a, b){
+			return a.left + a.width >= b.left &&
+			b.left + b.width >= a.left &&
+			a.top + a.height >= b.top &&
+			b.top + b.height >= a.top; 
+		}
+
+		function nazhali(e){
+			if(e.keyCode == 68){
+				keyRight = true;
+			}
+			if(e.keyCode == 65){
+				keyLeft = true;
+			}
+			if(e.keyCode == 83){
+				keyUp = true;
+			}
+			if(e.keyCode == 87){
+				keyDown = true;
+			}
+		}
+		function otpustili(e){
+			if(e.keyCode == 68){
+				keyRight = false;
+			}
+			if(e.keyCode == 65){
+				keyLeft = false;
+			}
+			if(e.keyCode == 83){
+				keyUp = false;
+			}
+			if(e.keyCode == 87){
+				keyDown = false;
+			}
+		}
+		function game(){
+			let hero1 = hero.getBoundingClientRect();
+			let coin1 = coin.getBoundingClientRect(); 
+			if(intersection(hero1, coin1)){
+				coin.style.left = `${Math.random()*(window.innerWidth - coin1.width)}px`;
+				coin.style.top = `${Math.random()*(window.innerHeight - coin1.height)}px`;
+				score++;
+				scoreboard.innerHTML = `score: ${score}`;
+			}
+
+			if(keyRight){
+				x = x+5;
+				hero.style.left = `${x}px`;
+				if(x + hero1.width >= window.innerWidth){
+					x = x-5;
+				}
+			}
+
+			if(keyLeft){
+				x = x-5;
+				hero.style.left = `${x}px`;
+				if(x <= 0){
+					x = x+5;
+				}
+			}
+			if(keyUp){
+				y = y+5;
+				hero.style.top = `${y}px`;
+				if(y + hero1.height>= window.innerHeight){
+					y = y-5;
+				}
+			}
+
+			if(keyDown){
+				y = y-5;
+				hero.style.top = `${y}px`;
+				if(y <= 0){
+					y = y+5;
+				}
+			}
+			requestAnimationFrame(game);
+		}
+		requestAnimationFrame(game);
+
+	</script>
+</body>
+</html>

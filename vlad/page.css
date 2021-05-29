@@ -1,0 +1,22 @@
+
+.page{
+	display: grid;
+	grid-template-rows: 60px 1fr;
+	grid-template-columns: 2fr 11fr;
+	grid-template-areas: "h h"
+	"n m";
+	height: 100vh;
+	grid-gap: 4px;
+}
+header{
+	background-color: #316967;
+grid-area: h;
+}
+nav{
+	background-color: #631e33;
+grid-area: n;
+}
+main{
+	background-color: #6d7003;
+	grid-area: m;
+}
