@@ -1,0 +1,19 @@
+.container{
+	width: 500px;
+	height: 500px;
+	border: 1px solid black;	
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.box{
+	width: 150px;
+	height: 150px;
+	border: 1px solid black;
+	transition: 0.3s linear;
+	filter: grayscale(100%);	
+}
+/*.box:hover{
+	filter: grayscale(0%);
+}*/

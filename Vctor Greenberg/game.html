@@ -7,9 +7,11 @@
 <body>
 	<img src="imghero.jpeg" id="hero">
 	<img src="coin.jpeg" id="coin">
+	<img src="troll.png" id="enemy">
 	<div id="scoreboard">
 		score: 0
 	</div>
+	<div id="restart"> Restart </div>
 	<script type="text/javascript">
 		let keyRight = false;
 		let keyLeft = false;
@@ -18,6 +20,11 @@
 		let keyUp = false;
 		let keyDown = false;
 		let score = 0;
+		let eX = 500;
+		let eY = 500;
+		let eDx = 5;
+		let eDy = 5;
+		let stop = 0;
 		console.log(scoreboard.innerHTML)
 		hero.style.left = '0px'
 		hero.style.top = '0px'
@@ -60,44 +67,61 @@
 				keyDown = false;
 			}
 		}
+		restart.onclick = function(){
+			document.location.reload();
+		}
 		function game(){
+			enemy.style.top = `${eY}px`;
+			enemy.style.left = `${eX}px`;
 			let hero1 = hero.getBoundingClientRect();
-			let coin1 = coin.getBoundingClientRect(); 
+			let coin1 = coin.getBoundingClientRect();
+			let enemy1 = enemy.getBoundingClientRect();
+			eX += eDx;
+			eY += eDy; 
+			if (eY + enemy1.height >= window.innerHeight || eY <= 0) {
+				eDy = -eDy;
+			}
+			if (eX + enemy1.width >= window.innerWidth || eX <= 0) {
+				eDx = -eDx;
+			}
 			if(intersection(hero1, coin1)){
 				coin.style.left = `${Math.random()*(window.innerWidth - coin1.width)}px`;
 				coin.style.top = `${Math.random()*(window.innerHeight - coin1.height)}px`;
 				score++;
 				scoreboard.innerHTML = `score: ${score}`;
 			}
-
-			if(keyRight){
-				x = x+5;
+			if(intersection(hero1, enemy1)){
+				stop++;
+				restart.style.display = "block";
+			}
+			if(keyRight && stop == 0){
+				x = x+10;
 				hero.style.left = `${x}px`;
 				if(x + hero1.width >= window.innerWidth){
-					x = x-5;
+					x = x-10;
 				}
 			}
 
-			if(keyLeft){
-				x = x-5;
+			if(keyLeft && stop == 0){
+				x = x-10;
 				hero.style.left = `${x}px`;
 				if(x <= 0){
-					x = x+5;
+					x = x+10;
 				}
 			}
-			if(keyUp){
-				y = y+5;
+			if(keyUp && stop == 0){
+				y = y+10;
 				hero.style.top = `${y}px`;
 				if(y + hero1.height>= window.innerHeight){
-					y = y-5;
+					y = y-10;
 				}
 			}
 
-			if(keyDown){
-				y = y-5;
+			if(keyDown && stop == 0){
+				y = y-10;
 				hero.style.top = `${y}px`;
 				if(y <= 0){
-					y = y+5;
+					y = y+10;
 				}
 			}
 			requestAnimationFrame(game);

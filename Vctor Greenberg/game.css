@@ -13,7 +13,27 @@
 	justify-content: center;
 	
 }
+#enemy {
+	position: absolute;
+	left: 500px;
+	top: 500px;
+}
+#restart {
+	width: 200px;
+	height: 100px;
+	background-color: silver;
+	border: 1px dotted black;
+	display: flex;
+	justify-content: center;
+	transition: 0.5s linear;
+	box-shadow:  5px, 5px, 0px, 0px black;
+	display: none;
+}
 body {
 	display: flex;
 	justify-content: flex-end;
+	font-family: 'Chandas';
+	cursor: url(cursor.cur) 0 0, pointer;
+	margin: 0;
+	height: 100vh;
 }

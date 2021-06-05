@@ -1,0 +1,40 @@
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Chandas';
+	cursor: url(cursor.cur) 0 0, pointer;
+	margin: 0;
+	height: 100vh;
+
+}
+.menu {
+	width: 250px;
+
+
+}
+.menu .menu-item {
+	height: 40px;
+	border:  1px solid black;
+	margin-bottom: -1px;
+	background-color: silver;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s linear;
+}
+.menu .menu-item a{
+	text-decoration: none;
+	transition: 0.5s linear;
+	
+}
+.menu .menu-item:hover{
+	background-color: gray;
+}
+.menu .menu-item a:hover{
+	
+	transform: translateX(10px);
+	text-decoration: underline;
+	
+}
