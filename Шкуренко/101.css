@@ -49,6 +49,9 @@ nav .navbar-item:hover{
 main{
 	grid-area: m;
 	background-color: #3ba85f;
+	display: flex;
+	flex-direction: column;
+
 }
 main .avatar img{
 	width: 300px;
@@ -56,22 +59,66 @@ main .avatar img{
 }
 main .ava-desc{
 	height: 500px;
-	width: 500px;
+	width: 50%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
+	background-color: #2cbd5c;
+	border-radius: 10%;
+	border: 1px solid white;
+	margin: 10px;
 }
 main .ava-desc .avatar {
 	height: auto;
-	width:300px
-	border:1px solid black;
+	width:300px;
+	
 	
 
 }
 main .ava-desc .desc{
 	width: 150px;
-	height: 100px;
+
 	border:1px solid black;
-	
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	padding: 10px;
+}
+main .post {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 50%;
+	height: 30%;	
+}
+main .post span{
+	align-self: flex-start;
+	margin-left: 20px;
+}
+main .post textarea{
+	min-width: 300px;
+	max-width:300px;
+	min-height: 100px;
+	max-height:100px;
+	background-color: #d9cc9c;
+}
+main .post button{
+	align-self: flex-end;
+	margin-right: 20px;
+	border: 0;
+	border-radius: 15%/35%;
+	padding: 5px 10px;
+	width: 70px;
+	background-color: #d9cc9c;
+	transition: transform 0.2s linear;
+	font-weight: bold;
+}
+main .post button:hover{
+	opacity: 1;
+}
+main .post button:active{
+	transform: scale(0.8);
 }
