@@ -1,0 +1,63 @@
+body{
+	background-image: linear-gradient(to left, blue, red);
+	display:flex;
+	/*height:100vh;*/
+	justify-content:center;
+	align-items: center;
+}
+h1{
+	color:#ff33aa;
+	animation:go 1s infinite linear;
+}
+@keyframes go{
+	25%{
+ color:red;
+	}
+	50%{
+color:blue;
+	}
+	75%{
+color:yellow;
+	}
+	100%{
+color:crimson;
+font-weight:0;
+text-decoration:underline;
+	}
+}
+#hero{
+position: absolute;
+width: 100px;top:0px;
+left:0px;
+height: auto;
+}
+#coin{
+width:100px;
+height:100px;
+background-image:radial-gradient(at center,red,blue,yellow,orange,gold);
+border-radius:50%;
+border:10px double darkgoldenrod;
+font-size:120px;
+color:white;
+font-weight:bold;
+display:flex;
+justify-content:center;
+align-items:center;
+position: absolute;
+left: 0px;
+top: 500px;
+}
+#score{
+position:absolute;
+right:0;
+top:0;
+font-size:40px;
+margin: 10px;
+padding:5px 10px;
+background-color:red;
+color:white;
+border:1px solid black;
+width:200px;
+margin-right: 0px;
+border-radius: 10%/40%;
+}

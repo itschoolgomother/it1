@@ -1,0 +1,27 @@
+body{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(to right, purple, teal, blue);
+}
+.menu{
+	width: 250px;
+}
+.menu .menu-item{
+	margin-bottom: 10px;
+	width: 100%;
+	padding: 10px 10px;
+	text-align: center;
+	border: 1px solid black;
+	background-color: white;
+	transition: 0.5s linear;
+}
+.menu .menu-item:hover{
+	transform: translateX(15px);
+	background-color: pink;
+}
+a{
+	display: block;
+	color:  blue; 
+}

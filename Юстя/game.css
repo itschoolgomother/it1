@@ -1,0 +1,59 @@
+body{
+	background-image: linear-gradient(to left, purple, pink,crimson);
+}
+#moneta{
+	width: 80px;
+	height: 80px;
+	background: gold;
+border-radius: 50%; 
+display: flex;
+justify-content: center;
+align-items: center;
+border: 5px solid brown;
+font-size: 30px;
+color:crimson; 
+position: absolute;
+left: 500px;
+}
+#moneta:hover{
+	background-color: pink;
+}
+h1{
+	font-size:60px; 
+	color: teal;
+	animation:go 4s infinite linear;  
+}
+@keyframes go{
+	25%{
+		color: red;
+	}
+	50%{
+		color: green;
+		text-decoration: underline;
+
+	}
+	75%{
+		color: blue;
+	}
+	100%{
+		color: purple;
+	}
+}
+#hero{
+	width: 300px;
+	height: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#SCORE{
+	min-width: 400px;
+	max-width: 600px;
+	font-size: 50px;
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid black;
+	position: absolute;
+	right: 0;
+	top: 0;
+}

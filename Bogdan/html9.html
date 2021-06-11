@@ -18,26 +18,46 @@
 		<div class="box" id="b"></div>
 	</div>
 	<script type="text/javascript">
+		function gs(){
+			for(let i = 0; i < boxes.length; i++){
+				boxes[i].style.filter ="grayscale(100%)";	
+			}
+		}
 		let boxes = document.getElementsByClassName('box')
+		let restart =0;
+		let time = 0;
 		let colors = ['red', 'green', 'yellow', 'blue']
-		
+		let col;
+		let col1;
+		for(let i = 0; i < boxes.length; i++){
+			boxes[i].onclick = function (){
+				boxes[i].style.filter = "grayscale(0%)";
+				col = boxes[i].style.backgroundColor;
+				console.log(col)
+				restart++;
+				if(restart == 3){
+					gs()
+				restart=0
+				}
+			}
+		}
 		b.onclick = function () {
+			for(let i =0;i<boxes.length; i++){
+				boxes[i].style.filter = "grayscale(100%)";
+			}
 			let arr = [0,1,2,3]
-		let arr1 = [4,5,6,7]
-		let count = 4;
+			let arr1 = [4,5,6,7]
+			let count = 4;
 			for(let i = 0; i < colors.length;i++){
 				let r = Math.floor(Math.random()*count)
 				let r1 = Math.floor(Math.random()*count)
 				boxes[arr[r]].style.background  = colors[i];
 				boxes[arr1[r1]].style.background = colors[i];
-                arr.splice(r,1);
-                arr1.splice(r1,1);
-                count--
-                for(let i =0; i<boxes.length;i++){
-                	boxes[i].onclick = function(){
-                	boxes[i].style.filter = "grayscale(0)";	
-                	}
-                }
+				arr.splice(r,1);
+				arr1.splice(r1,1);
+				count--
+
+
 			}
 		}
 

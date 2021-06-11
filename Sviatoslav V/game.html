@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>play</title>
+	<link rel="stylesheet" type="text/css" href="game.css">
+	<link rel="shortcut icon" href="favicon2.ico" type="image/x-icon">
+	<!-- https://www.favicon.cc/ -->
+</head>
+<body>
+	<img id="cat" src="cat.png">
+	<img id="fish" src="fish.png">
+	<script type="text/javascript">
+		let keyRight = false;
+		let x = 400;
+		document.addEventListener('keydown',press)
+		document.addEventListener('keyup',unpress)
+		function press(e){
+			if (e.keyCode == 68) {
+				keyRight = true;
+				
+			}
+		}
+		function unpress(e){
+			if (e.keyCode == 68) {
+				keyRight = false;
+				
+			}
+		}
+		function game(){
+			if (keyRight) {
+				x+=5;
+				cat.style.left = `${x}px`;
+
+			}
+			requestAnimationFrame(game);
+		}
+			requestAnimationFrame(game);
+	</script>
+</body>
+</html>

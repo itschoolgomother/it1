@@ -1,0 +1,14 @@
+#cat{
+	width: 200px;
+	height: auto;
+	position: absolute;
+	left: 400px;
+	top: 400px;
+}
+body{
+	background-color: #0064ff;
+}
+#fish{
+	width: 200px;
+	height: auto;
+}
