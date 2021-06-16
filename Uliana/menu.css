@@ -1,0 +1,33 @@
+body{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'FreeSans'
+}
+.menu{
+	width: 250px;
+
+}
+.menu .menu-item{
+	width: 100%;
+	border: 1px solid black;
+	text-align: center;
+	padding: 10px 0;
+	margin-bottom: 5px;
+	background-color: #a3bac4;
+	transition: 0.3s linear;
+
+}
+.menu .menu-item a{
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #8affe4;
+	font-weight: bold;
+	display: block;
+}
+.menu .menu-item:hover{
+	background-color: #83959d;
+	transform: translateX(15px);
+	text-decoration: underline #8affe4;
+}

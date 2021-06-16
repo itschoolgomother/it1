@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="geme.css">	
+	<title>game</title>
+</head>
+<body>
+	<div id="coin">$</div>
+	<img id="hero" src="cat.png">
+	<script type="text/javascript">
+		let keyRight = false;
+		let x = 0
+		document.addEventListener('keydown', press)
+		document.addEventListener('keyup', unpress)
+
+		function press(e) {
+			if (e.keyCode==68) {
+				keyRight=true;
+			}
+		}
+
+		function unpress(e) {
+			if (e.keyCode==68) {
+				keyRight=false;
+			}
+		}
+		function game(){
+			if(keyRight){
+				x = x  + 5;
+				hero.style.left =`${x}px`;
+			}
+			requestAnimationFrame(game);
+		}
+		requestAnimationFrame(game);
+		
+	</script>
+</body>
+</html>
+if(x+200>=window.innezWidth){
+x=x-5;	
+}
+}

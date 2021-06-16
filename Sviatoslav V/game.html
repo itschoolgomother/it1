@@ -10,27 +10,72 @@
 	<img id="cat" src="cat.png">
 	<img id="fish" src="fish.png">
 	<script type="text/javascript">
+		fish.style.left = `${Math.random()*(window.innerWidth - 200)}px`
+		fish.style.top = `${Math.random()*(window.innerHeight - 200)}px`
 		let keyRight = false;
 		let x = 400;
+		let keyLeft = false;
+		let keyTop = false;
+		let keyBottom = false;
+		let y = 400;
 		document.addEventListener('keydown',press)
 		document.addEventListener('keyup',unpress)
 		function press(e){
 			if (e.keyCode == 68) {
 				keyRight = true;
-				
+			}
+			if (e.keyCode == 65) {
+				keyLeft = true;
+			}
+			if (e.keyCode == 83) {
+				keyTop = true;
+			}
+			if (e.keyCode == 87) {
+				keyBottom = true;
 			}
 		}
 		function unpress(e){
 			if (e.keyCode == 68) {
 				keyRight = false;
-				
+			}
+				if (e.keyCode == 65) {
+				keyLeft = false;
+			}
+			if (e.keyCode == 83) {
+				keyTop = false;
+			}
+			if (e.keyCode == 87) {
+				keyBottom = false;
 			}
 		}
 		function game(){
 			if (keyRight) {
 				x+=5;
 				cat.style.left = `${x}px`;
-
+				if (x + 200 >= window.innerWidth) {
+					x -= 5
+				}
+			}
+			if (keyLeft) {
+				x-=5;
+				cat.style.left = `${x}px`;
+				if (x <= 0 ) {
+					x += 5
+				}
+			}
+			if (keyTop) {
+				y+=5;
+				cat.style.top = `${y}px`;
+				if (y + 200 >= window.innerHeight) {
+					y -= 5
+				}
+			}
+			if (keyBottom) {
+				y-=5;
+				cat.style.top = `${y}px`;
+				if (y <= 0 ) {
+					y += 5
+				}
 			}
 			requestAnimationFrame(game);
 		}
